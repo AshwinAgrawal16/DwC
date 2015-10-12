@@ -2,3 +2,6 @@
 
 Trying to use the event core extention of Darwin Core Archives for documenting cases of abundance type data where there are several sampling instances that leaves blank sampels (i.e. negative obgservations). 
 
+Folder contains raw data (as punced from field forms) in xls format, R-scripts to convert these data to dwca format and text (csv) files with the formated data ready to upload into the IPT. 
+
+Resource URL: http://gbif.vm.ntnu.no/ipt/resource?r=lepidurus-arcticus-survey_northeast-greenland_2013&v=1.1
