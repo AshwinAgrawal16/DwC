@@ -6,3 +6,6 @@ Trying out Darwin core archives for storing and sharing sampling based data (tes
 The folder contains raw data in MS xl format (as punched from field forms), R-code to transfer this to an dwca, and text files (csv) of the formated data ready to upload to the IPT. 
 
 Resource URL: http://gbif.vm.ntnu.no/ipt/resource?r=bear_island_testfishing
+
+Raw data innput on google docs: https://docs.google.com/spreadsheets/d/1FWy-ueF3ozFQq398MxoD_5lasPoynLnckYPRBXCZJco/edit?usp=sharing
+
