@@ -84,3 +84,35 @@ measurements.extention2 <- left_join(measurements.extention, temporary3)
 measurements_and_facts_EXTENTION <- subset(measurements.extention2, select = -c(locationID) )
 
 write.csv(measurements_and_facts_EXTENTION, "measurements.extention.csv",row.names=F)
+
+
+#######################################################################
+#
+# Testcase - take data back from GBIF using the rgbif library
+#
+#####################################################################
+library(rgbif)
+
+
+
+test <- occ_search(datasetKey = "78360224-5493-45fd-a9a0-c336557f09c3",limit=300,return="all")
+lepidata <- test$data  
+gbifmap(test)
+           , 
+           fields=c('name','basisOfRecord','protocol'), limit = 20)
+
+lepidurus <- datasets(uuid="78360224-5493-45fd-a9a0-c336557f09c3")
+
+test <- occ_download("datasetKey-78360224-5493-45fd-a9a0-c336557f09c3")
+
+key <- name_backbone(name='Puma concolor')$speciesKey
+dat <- occ_search(taxonKey=key, return='data', limit=300)
+gbifmap(dat)
+
+key <- name_backbone(name='Puma concolor')$speciesKey
+dat <- occ_search(taxonKey=key, return='data', limit=300)
+gbifmap(dat)
+
+
+
+
