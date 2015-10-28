@@ -7,4 +7,6 @@ The current repository focuses on code for documenting sampling based ecological
 
 The new Event Core of Darwin Core Archives offers these possibilities, but have some significant drawbacks when it comes to documenting measurements and facts about individuals. The purpose of this repository is to try to provide some user cases, documenting the sampling process in DwC-A. 
 
+[Brief presentation about the work](https://goo.gl/rntxpT)
+
 The repository is under Development.
