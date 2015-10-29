@@ -60,7 +60,7 @@ write.csv(event_CORE, "event_CORE.csv",row.names=F)
 
 # occurence core as is
 occurrence_EXTENTION <- occurrence
-write.csv(occurrence_EXTENTION, "occurrence_EXTENTION.csv")
+write.csv(occurrence_EXTENTION, "occurrence_EXTENTION.csv",row.names=F)
 
 
 #######################################################################
