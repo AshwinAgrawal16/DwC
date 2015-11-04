@@ -13,7 +13,7 @@ library(xlsx)
 library(tidyr)
 library(dplyr)
 
-# set directory of directory with data if not in same directory as the script
+# set working directory if your data is not in the same directory as the script
 setwd("C:\\iSkya\\GitHub\\andersfi\\DwC\\exsample_Z-sweeps.lepidurus")
 
 #######################################################################
@@ -30,24 +30,26 @@ setwd("C:\\iSkya\\GitHub\\andersfi\\DwC\\exsample_Z-sweeps.lepidurus")
 xl.inn <- "Lepidurus_Zackenberg.xls"
 # read data
 
-occurrence <- read.xlsx2(file=xl.inn,sheetName="occurrence")
-event <- read.xlsx2(file=xl.inn, sheetName="event")
-location <- read.xlsx2(file=xl.inn,sheetName="location")
-measurm_facts <- read.xlsx2(file=xl.inn,sheetName="measurment_and_facts")
-measurm_description <- read.xlsx2(file=xl.inn,sheetName="measurments_description")
+occurrence <- read.xlsx2(file=xl.inn,sheetName="occurrence") # the sheet containing the occurence information (i.e. organisms sampled during the event)
+event <- read.xlsx2(file=xl.inn, sheetName="event") # the sheet with the information about the sampling events
+location <- read.xlsx2(file=xl.inn,sheetName="location") # the sheet with the information about the location
+measurm_facts <- read.xlsx2(file=xl.inn,sheetName="measurment_and_facts") # measurements and facts: in this case location specific information, but could be also specific information about a given sampling event 
+measurm_description <- read.xlsx2(file=xl.inn,sheetName="measurments_description") # description of the terms used in the measurment and facts sheet
+DwC_remarks <- read.xlsx2(file=xl.inn,sheetName="DwC_remarks") # remarks about the specific use of Darwin Core terms in this dataset 
 
-##################################################
-# merge the location and event table
+
+#####################################################################
+# The data for the event core is for convinience punched in two tables
+# Here, we merge the location and event table
 # into one table (i.e. the event core of a DwC Archive)
-##################################################
+#######################################################################
 
 # first join event and occurence table 
   event_CORE <- left_join(event, location)
 
-# the date column is no good (xl store dates as numbers), 
-# use the day,month,year columns to create date in ISO format
+# Prefere to use day,month,year format for dates since this is an XL based dataset (xl store dates as numbers), 
+# Here, we use the day,month,year columns to create date in ISO format
 eventDate <- paste(event_CORE$year,event_CORE$month,event_CORE$day,sep="-")
-event_CORE <- subset(event_CORE, select = -c(date) )
 
 # write output to workdir
 write.csv(event_CORE, "event_CORE.csv",row.names=F)
@@ -87,32 +89,26 @@ write.csv(measurements_and_facts_EXTENTION, "measurements.extention.csv",row.nam
 
 
 #######################################################################
+# 
+# Write out hte DwC term description sheet as csv table for documentation 
+#
+#####################################################################
+
+write.table(DwC_remarks, "DwC_remarks.csv",row.names=F,sep=";")
+
+
+#######################################################################
 #
 # Testcase - take data back from GBIF using the rgbif library
 #
+# under construction...... 
+# 
 #####################################################################
 library(rgbif)
 
-
-
-test <- occ_search(datasetKey = "78360224-5493-45fd-a9a0-c336557f09c3",limit=300,return="all")
-lepidata <- test$data  
-gbifmap(test)
-           , 
-           fields=c('name','basisOfRecord','protocol'), limit = 20)
-
-lepidurus <- datasets(uuid="78360224-5493-45fd-a9a0-c336557f09c3")
-
-test <- occ_download("datasetKey-78360224-5493-45fd-a9a0-c336557f09c3")
-
-key <- name_backbone(name='Puma concolor')$speciesKey
-dat <- occ_search(taxonKey=key, return='data', limit=300)
-gbifmap(dat)
-
-key <- name_backbone(name='Puma concolor')$speciesKey
-dat <- occ_search(taxonKey=key, return='data', limit=300)
-gbifmap(dat)
-
-
-
-
+test <- occ_search(datasetKey = "78360224-5493-45fd-a9a0-c336557f09c3",limit=300,return="data")
+head(test)
+str(test)
+dim(test)
+    
+# sligth problem - the search only returns the occurences, how to retrive all events - also those without occurences?        
