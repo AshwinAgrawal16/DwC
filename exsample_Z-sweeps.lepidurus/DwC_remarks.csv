@@ -1,4 +1,4 @@
-"DwC_category";"DwC_term";"usage"
+
 "Occurence";"OccurenceStatus";"only presences recorded in occurrence table."
 "Occurence";"OccurenceID ";"Using UUID to create a global unique identifier (GUID). Adding resolver to this provided by the Norwegian GBIF node. "
 "Occurence";"institutionCode";"code of the institution holding the physical specimens "
