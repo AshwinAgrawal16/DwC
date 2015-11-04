@@ -14,7 +14,7 @@ library(tidyr)
 library(dplyr)
 
 # set working directory if your data is not in the same directory as the script
-setwd("C:\\iSkya\\GitHub\\andersfi\\DwC\\exsample_Z-sweeps.lepidurus")
+setwd("C:\\iSkya\\GitHub\\DwC\\exsample_Z-sweeps.lepidurus")
 
 #######################################################################
 #
