@@ -6,5 +6,4 @@ The folder contains raw data (as punched from field forms) in xls format, R-scri
 
 Resource URL: http://gbif.vm.ntnu.no/ipt/resource?r=lepidurus-arcticus-survey_northeast-greenland_2013&v=1.1
 
-Raw data input on google docs: https://docs.google.com/spreadsheets/d/1AkZSzhSqf5LWdc0Vos8BXkCP2egeD6wp-Tgh1Dwho1A/edit?usp=sharing
 
