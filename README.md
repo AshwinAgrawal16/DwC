@@ -12,6 +12,7 @@ The new Event Core of Darwin Core Archives offers these possibilities, but have 
 [Some other demo-examples](https://ntnu.box.com/v/dwc-mapping-demo-cases)
 
 [Brief presentation held at a Data Publishing Workshop in Trondheim, Norway 2015-11-30](https://goo.gl/rntxpT)
+
 [Brief presentation held at a workshop in front of the 8th GBIF European Nodes meeting](https://ntnu.box.com/v/gbif-workshop)
 
 The repository is under Development.
