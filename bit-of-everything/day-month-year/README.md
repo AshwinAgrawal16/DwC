@@ -1,0 +1,1 @@
+function day_month_year that takes as innputt the three vectors day, month, year a common way of recording time information. However, commonly in large unstructured datsets, month or day are often missing and you want to express this as an  intervall in eventDate. the function returns three vectors - eventDate (an intervall), startDate and endDate
