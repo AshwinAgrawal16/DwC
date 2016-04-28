@@ -9,7 +9,7 @@ The new Event Core of Darwin Core Archives offers these possibilities, but have 
 * Using the event core, Measurements and facts about individual occurrences are not possible to map properly due to the inherent star-format of DwC-A. Measurements and facts about individuals are only possible to document properly when related to the specific sampling event. The alternative is to map sampling based data where extra information (not covered by DwC terms) are vital using the occurrence core. Then we are back to problems documenting absences. 
 * Absences can be made explicit by listing occurrences of species not recorded and indicating "absent" in the "occurrenceStatus" field. However, for many types of analyses (e.g. vegetation plots where the investigator looks for every vascular plant known to mankind in his sampling square), this becomes cumbersome and impractical. A field indicating the taxonomic range the investigator have screened his sample for would solve this problem. A better solution would probably be to link each event to a checklist/taxa-list describing the taxonomic scope of the sample?
 
-
+[Some other demo-examples](https://ntnu.box.com/v/dwc-mapping-demo-cases)
 
 [Brief presentation held at a Data Publishing Workshop in Trondheim, Norway 2015-11-30](https://goo.gl/rntxpT)
 
