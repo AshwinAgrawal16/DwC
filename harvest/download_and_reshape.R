@@ -11,7 +11,7 @@ occurrence <- read.table("occurrence.txt",sep="\t",header = T)
 measurementorfact <- read.table("measurementorfact.txt",sep="\t",header = T)
 
 ########################################################################################################
-# restructure the DwC-A files to a format ready for analyses - output file "cdw" (CannibalDwarf)
+# restructure the DwC-A files to a format ready for analyses - output file "cdw" (CannibalDwarf).
 ########################################################################################################
 
 # first restructure Measurment and fact table from long to wide format
